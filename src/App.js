@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react'
 
-function App() {
+
+import './App.css'
+
+function App () {
+  const [joke, setJoke] = useState({})
+  const [isReveal, setIsReveal] = useState(false)
+
+  const btnHandler = () => {
+    if (!isReveal) {
+      
+      setIsReveal(true)
+    } else {
+      
+      fetchJoke()
+      setIsReveal(false)
+    }
+  }
+  const fetchJoke = async () => {
+    return await fetch('https://v2.jokeapi.dev/joke/Programming?type=twopart')
+      .then(res => res.json())
+      .then(joke => setJoke(joke))
+      .catch(err => console.log(err))
+  }
+
+  useEffect(() => {
+
+    fetchJoke()
+ 
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <header className='App-header'>
+        <h1 className='main-title'>Programmers Jokes</h1>
+        <h2>{joke.setup}</h2>
+        <div className='delivery-box'>
+
+        {
+          isReveal ? (
+            <>
+              <div>{joke.delivery}</div>
+           
+            </>
+          ) : (
+               <div>Push the button!</div>   
+            )
+          }
+          <button className='btn' onClick={btnHandler}>{ isReveal ? 'Reveal': 'Refresh'}</button>   
+  
+           </div>
+              </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
