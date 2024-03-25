@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 
-
 import './App.css'
 
 function App () {
@@ -9,10 +8,8 @@ function App () {
 
   const btnHandler = () => {
     if (!isReveal) {
-      
       setIsReveal(true)
     } else {
-      
       fetchJoke()
       setIsReveal(false)
     }
@@ -25,9 +22,7 @@ function App () {
   }
 
   useEffect(() => {
-
     fetchJoke()
- 
   }, [])
   return (
     <div className='App'>
@@ -36,20 +31,22 @@ function App () {
         <h2>{joke.setup}</h2>
         <div className='delivery-box'>
 
-        {
-          isReveal ? (
-            <>
-              <div>{joke.delivery}</div>
-           
-            </>
-          ) : (
-               <div>Push the button!</div>   
-            )
+          {
+          isReveal
+            ? (
+              <>
+                <div>{joke.delivery}</div>
+
+              </>
+              )
+            : (
+              <div>Push the button!</div>
+              )
           }
-          <button className='btn' onClick={btnHandler}>{ isReveal ? 'Reveal': 'Refresh'}</button>   
-  
-           </div>
-              </header>
+          <button className='btn' onClick={btnHandler}>{isReveal ? 'Reveal' : 'Refresh'}</button>
+
+        </div>
+      </header>
     </div>
   )
 }
