@@ -15,11 +15,14 @@ function App () {
     }
   }
   const fetchJoke = async () => {
-    return await fetch('https://v2.jokeapi.dev/joke/Programming?type=twopart')
-      .then(res => res.json())
-      .then(joke => setJoke(joke))
-      .catch(err => console.log(err))
+    return await fetch('https://v2.jokeapi.dev/joke/Programming?type=twopart').then(res=> res.json).then(jokeData => setJoke(jokeData)).catch(err => console.log(err))
   }
+  // const fetchJoke = async () => {
+  //   return await fetch('https://v2.jokeapi.dev/joke/Programming?type=twopart')
+  //     .then(res => res.json())
+  //     .then(joke => setJoke(joke))
+  //     .catch(err => console.log(err))
+  // }
 
   useEffect(() => {
     fetchJoke()
