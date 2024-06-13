@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Programmers-joke/static/css/main.77c4695f.css",
-    "main.js": "/Programmers-joke/static/js/main.af7c02f0.js",
+    "main.js": "/Programmers-joke/static/js/main.f6c32ea4.js",
     "static/js/453.d73b0aaa.chunk.js": "/Programmers-joke/static/js/453.d73b0aaa.chunk.js",
     "index.html": "/Programmers-joke/index.html",
     "main.77c4695f.css.map": "/Programmers-joke/static/css/main.77c4695f.css.map",
-    "main.af7c02f0.js.map": "/Programmers-joke/static/js/main.af7c02f0.js.map",
+    "main.f6c32ea4.js.map": "/Programmers-joke/static/js/main.f6c32ea4.js.map",
     "453.d73b0aaa.chunk.js.map": "/Programmers-joke/static/js/453.d73b0aaa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.77c4695f.css",
-    "static/js/main.af7c02f0.js"
+    "static/js/main.f6c32ea4.js"
   ]
 }
